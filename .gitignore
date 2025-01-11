@@ -128,7 +128,7 @@ fabric.properties
 .mtj.tmp/
 
 # Package Files #
-*.jar
+# *.jar # commented out for include project dependencies
 *.war
 *.nar
 *.ear
@@ -170,3 +170,6 @@ nbdist/
 .ionide
 
 # End of https://www.toptal.com/developers/gitignore/api/java,netbeans,intellij,visualstudiocode
+
+# Added by me
+.env
