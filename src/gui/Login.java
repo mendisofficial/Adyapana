@@ -19,6 +19,7 @@ public class Login extends javax.swing.JFrame {
      */
     public Login() {
         initComponents();
+        Notifications.getInstance().setJFrame(this);
     }
 
     /**
@@ -39,6 +40,7 @@ public class Login extends javax.swing.JFrame {
         jPasswordField1 = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Adyapana - Login");
 
         jLabel1.setText("Adyapana Institute - Admin login");
 
@@ -107,6 +109,7 @@ public class Login extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void loginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBtnActionPerformed
@@ -120,8 +123,9 @@ public class Login extends javax.swing.JFrame {
                 // Login successful
                 Notifications.getInstance().show(Notifications.Type.SUCCESS, Notifications.Location.TOP_RIGHT, "Login successful!");
                 // Redirect to another frame or perform other actions
-                // this.dispose();
-                System.out.println("Login done");
+                this.dispose();
+                Dashboard dashboard = new Dashboard();
+                dashboard.setVisible(true);
             } else {
                 // Login failed
                 Notifications.getInstance().show(Notifications.Type.ERROR, Notifications.Location.TOP_RIGHT, "Login failed!");
