@@ -7,7 +7,9 @@ package model;
 import io.github.cdimascio.dotenv.Dotenv;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import org.mindrot.jbcrypt.BCrypt;
 
 /**
  *
@@ -38,6 +40,21 @@ public class MySQL {
     public static Integer executeIUD(String query) throws Exception {
         createConnection();
         return connection.createStatement().executeUpdate(query);
+    }
+    
+    public static boolean validateUser(String username, String password) throws Exception {
+        createConnection();
+        String query = "SELECT * FROM Admin WHERE Username = ?";
+        PreparedStatement preparedStatement = connection.prepareStatement(query);
+        preparedStatement.setString(1, username);
+        ResultSet resultSet = preparedStatement.executeQuery();
+        if (resultSet.next()) {
+            String storedHash = resultSet.getString("Password");
+            if (BCrypt.checkpw(password, storedHash)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public static void main(String[] args) {
