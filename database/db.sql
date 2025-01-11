@@ -43,3 +43,10 @@ CREATE TABLE Invoice (
     FOREIGN KEY (Tno) REFERENCES Teacher(Tno),
     FOREIGN KEY (Subno) REFERENCES Subject(Subno)
 );
+
+-- Create the Admin table
+CREATE TABLE Admin (
+    AdminID INT PRIMARY KEY,
+    Username VARCHAR(100) UNIQUE NOT NULL,
+    Password VARCHAR(255) NOT NULL
+);
