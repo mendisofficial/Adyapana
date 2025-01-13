@@ -173,3 +173,4 @@ nbdist/
 
 # Added by me
 .env
+/.idea

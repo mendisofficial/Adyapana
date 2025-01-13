@@ -65,7 +65,7 @@ CREATE TABLE TeacherSubject (
     Tno INT,
     Subno INT,
     PRIMARY KEY (Tno, Subno),
-    FOREIGN KEY (Tno) REFERENCES Teacher(Tno),
+    FOREIGN KEY (Tno) REFERENCES Teacher(Tno) ON DELETE CASCADE,
     FOREIGN KEY (Subno) REFERENCES Subject(Subno)
 );
 
