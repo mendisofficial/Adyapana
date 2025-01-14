@@ -57,7 +57,12 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
-        jButton8.setText("Class Management");
+        jButton8.setText("Class Registration");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -122,6 +127,14 @@ public class Dashboard extends javax.swing.JFrame {
         TeacherMgmt teacherMgmt = new TeacherMgmt();
         teacherMgmt.setVisible(true);
     }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // Class reg
+        
+        this.dispose();
+        ClassReg classReg = new ClassReg();
+        classReg.setVisible(true);
+    }//GEN-LAST:event_jButton8ActionPerformed
 
     /**
      * @param args the command line arguments
