@@ -40,6 +40,11 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel3.setText("Dashboard");
 
         jButton5.setText("Student Management");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jLabel4.setText("Welcome to Adyapana institue management system");
 
@@ -135,6 +140,14 @@ public class Dashboard extends javax.swing.JFrame {
         ClassReg classReg = new ClassReg();
         classReg.setVisible(true);
     }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // Student mgmt
+        
+        this.dispose();
+        StudentMgmt studentMgmt = new StudentMgmt();
+        studentMgmt.setVisible(true);
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
