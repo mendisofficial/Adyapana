@@ -36,7 +36,7 @@ CREATE TABLE Invoice (
     Sno INT,
     Tno INT,
     Subno INT,
-    month DATE,
+    month VARCHAR(10),
     Value DECIMAL(10, 2),
     PRIMARY KEY (Sno, Tno, Subno, month),
     FOREIGN KEY (Sno) REFERENCES Student(Sno),
